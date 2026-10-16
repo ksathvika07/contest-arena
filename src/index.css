@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #1B1931;
+    color: #F7F4F9;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1B1931;
+}
+::-webkit-scrollbar-thumb {
+  background: #44174E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #862249;
+}
+
+/* Glow & Glass Utilities */
+.glass-panel {
+  background: rgba(68, 23, 78, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 188, 185, 0.12);
+}
+
+.glass-panel-elevated {
+  background: rgba(45, 31, 68, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(237, 158, 89, 0.2);
+}
+
+.gradient-peach {
+  background: linear-gradient(135deg, #ED9E59 0%, #862249 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(145deg, rgba(68, 23, 78, 0.6) 0%, rgba(27, 25, 49, 0.8) 100%);
+}
+
+.text-gradient-peach {
+  background: linear-gradient(135deg, #ED9E59 0%, #E8BCB9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-berry {
+  background: linear-gradient(135deg, #E8BCB9 0%, #862249 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pulse animation for live indicators */
+@keyframes live-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(237, 158, 89, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(237, 158, 89, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(237, 158, 89, 0); }
+}
+
+.animate-live-pulse {
+  animation: live-pulse 2s infinite;
+}
